@@ -27,7 +27,6 @@ app.get('/apps', (req, res) => {
 		app.App.toLowerCase().includes(search.toLowerCase())
 	);
 
-	//TODO:Correct sort function
 	if (sort) {
 		results.sort((a, b) => {
 			return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
@@ -40,4 +39,4 @@ app.get('/apps', (req, res) => {
 	res.json(results);
 });
 
-app.listen(8000, () => [console.log('Listening on port 8000')]);
+module.exports = app;
