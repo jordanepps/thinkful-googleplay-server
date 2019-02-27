@@ -27,11 +27,18 @@ app.get('/apps', (req, res) => {
 		app.App.toLowerCase().includes(search.toLowerCase())
 	);
 
-	if (sort) {
+	if (sort === 'App') {
 		results.sort((a, b) => {
 			return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
 		});
 	}
+
+	if (sort === 'Rating') {
+		results.sort((a, b) => {
+			return a[sort] < b[sort] ? 1 : a[sort] > b[sort] ? -1 : 0;
+		});
+	}
+
 	if (genres) {
 		results = results.filter(app => app.Genres.includes(genres));
 	}

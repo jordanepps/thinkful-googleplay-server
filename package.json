@@ -2,10 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "mocha",
-    "start": "node server",
+    "start": "nodemon server",
     "dev": "nodemon server",
     "debug": "ndb node server"
   },
@@ -20,6 +20,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.0.2",
+    "ndb": "^1.0.43",
     "nodemon": "^1.18.10",
     "supertest": "^3.4.2"
   }
